@@ -4,7 +4,7 @@
 - Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original. 
  */
 
- /* `La letra "e" es convertida para "enter"`
+/* `La letra "e" es convertida para "enter"`
 `La letra "i" es convertida para "imes"`
 `La letra "a" es convertida para "ai"`
 `La letra "o" es convertida para "ober"`
@@ -12,8 +12,53 @@
 */
 
 const textInput = document.querySelector(".textInput");
-const codigo = [["e","enter"],
-                ["i","imes"],
-                ["a","ai"],
-                ["o","ober"],
-                ["u","ufat"],];
+const textOutput = document.querySelector(".textOutput");
+const codigo = [["e", "enter"],
+["i", "imes"],
+["a", "ai"],
+["o", "ober"],
+["u", "ufat"],];
+
+function btnEncrypt() {
+    const textEncrypted = encrypt(textInput.value);
+    textInput.value = textEncrypted;
+    textOutput.style.backgroundImage("none");
+    textInput.value = "";    
+}
+
+function btnDecrypt() {
+
+}
+
+function copy() {
+
+}
+
+function encrypt(textInput) {
+    textOutput = textInput
+        .toLowerCase()
+        .replace(/[^a-z ]/g, "");
+        console.log("antes del for : textOutput :"+textOutput+" textInput: "+textInput)
+    for (let i = 0; i < codigo.length; i++) {
+        console.log("vuelta nº"+i+" del for : textOutput :"+textOutput+" textInput: "+textInput)
+        if (textOutput.includes(codigo[i][0])) {
+            console.log("if")
+            textOutput = textOutput.replaceAll
+                (codigo[i][0], codigo[i][1]);
+        }
+    }
+    return textOutput;
+}
+
+function decrypt(textInput) {
+    textOutput = textInput
+        .toLowerCase()
+        .replace(/[^a-z ]/g, "");
+    for (let i = 0; i < codigo.length; i++) {
+        if (textOutput.includes(codigo[i][1])) {
+            textOutput = textOutput.replaceAll
+                (codigo[i][1], codigo[i][0]);
+        }
+    }
+    return textOutput;
+}
