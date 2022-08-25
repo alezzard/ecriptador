@@ -1,0 +1,25 @@
+:root{
+    --bg-color-body :rgb(26, 28, 26);
+    --bg-color-primary :rgba(90, 130, 90, 0.3);
+    --bg-color-secondary :rgb(30, 100, 3);
+    --bg-color-button :rgb(6, 60, 6);
+    --title-color :rgb(6, 60, 6);
+    --text-color :rgb(120, 130, 120);
+}
+body{
+    color: var(--text-color);
+    background-color: var(--bg-color-body);
+}
+
+main{
+}
+.primaryFrame{
+    display: flex;
+    background-color: var(--bg-color-primary);
+    
+}
+
+.secondaryFrame{
+    background-color: var(--bg-color-secondary);
+
+}
