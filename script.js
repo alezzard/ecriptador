@@ -12,26 +12,33 @@
 */
 
 const textInput = document.querySelector(".textInput");
-const textOutput = document.querySelector(".textOutput");
+let textOutput = document.querySelector(".textOutput");
 const codigo = [["e", "enter"],
 ["i", "imes"],
 ["a", "ai"],
 ["o", "ober"],
 ["u", "ufat"],];
 
-function btnEncrypt() {
+function btnEncrypt(){
     const textEncrypted = encrypt(textInput.value);
-    textInput.value = textEncrypted;
-    textOutput.style.backgroundImage("none");
+    textOutput.value = textEncrypted;
+    textOutput.style.backgroundImage = "none";
     textInput.value = "";    
 }
 
-function btnDecrypt() {
-
+function btnDecrypt(){
+    const textDencrypted = decrypt(textInput.value);
+    textOutput.value = textDencrypted;
+    textOutput.style.backgroundImage = "url(assets/Muñeco.png)";
+    textInput.value = ""; 
 }
 
 function copy() {
-
+    textOutput.select();
+    navigator.clipboard.writeText(textOutput.value)
+    textInput.value = textOutput.value;
+    textOutput.value = "";
+    textOutput.style.backgroundImage = "url(assets/Muñeco.png)";
 }
 
 function encrypt(textInput) {
