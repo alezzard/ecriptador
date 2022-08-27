@@ -3,8 +3,10 @@
     --bg-color-primary: rgb(30, 100, 3);
     --bg-color-secondary: rgba(90, 130, 90, 0.842);
     --bg-color-button: rgb(6, 60, 6);
+    --bg-text-message: rgb(255,250,205);
     --title-color: rgb(6, 60, 6);
     --text-color: rgb(120, 130, 120);
+    /* color-scheme: dark; */
 }
 
 body {
@@ -42,9 +44,12 @@ header {
 }
 
 .textInput {
+    padding: 10px;
     margin-top: 80px;
     margin-bottom: 440px;
     border-radius: 10%;
+    text-align: center;
+    background-color: var(--bg-text-message);
 }
 
 .textInput::placeholder {
@@ -94,17 +99,25 @@ header {
 }
 
 .textOutput{
-    border-radius: 10%;    
+    background-position: 18px;
+    background-size: 100%;
+    color: var(--title-color);
+    width: 310px;
+    height: 110px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--bg-text-message);  
 }
 
 .message{
-    margin-top: -10rem;
+    margin-top: -9rem;
     width: 170px;
     text-align: center;
     color: var(--title-color);
 }
 
 .copy{
+    
     display: none;
 }
 
@@ -112,17 +125,17 @@ header {
 
 
     .primaryFrame {
-        display: flex;
+      /*   display: flex;
         position: relative;
-        border-radius: 1%;
+        border-radius: 1%; */
     }
 
 
 
     .secondaryFrame {
-        background-color: var(--bg-color-secondary);
+      /*   background-color: var(--bg-color-secondary);
         position: absolute;
-        border-radius: 1%;
+        border-radius: 1%; */
 
     }
 
